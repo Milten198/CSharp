@@ -50,7 +50,25 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
         [Then(@"I am on logged page with file to download")]
         public void ThenIAmOnLoggedPageWithFileToDownload()
         {
-            task6Page.IsLoggedPageOpen();
+            Assert.True(task6Page.IsLoggedPageOpen(), "Logged page is not opened");
+        }
+
+        [Then(@"I press logout button")]
+        public void ThenIPressLogoutButton()
+        {
+            task6Page.ClickLogoutButton();
+        }
+
+        [Then(@"I am on login page")]
+        public void ThenIAmOnLoginPage()
+        {
+            Assert.True(task6Page.IsLoginPageOpened(), "Login page is not opened");
+        }
+
+        [Then(@"I can see error with message ""(.*)""")]
+        public void ThenICanSeeErrorWithMessage(string message)
+        {
+            Assert.AreEqual(message, task6Page.GetLoginErrorMessage(), "Messages are not equal");
         }
     }
 }

@@ -20,6 +20,9 @@ namespace SeleniumFrameworkCsharp.Pages.Locators
         public IWebElement loginButton;
 
         [FindsBy(How = How.Id, Using = "logout")]
-        public IWebElement logoutButton;      
+        public IWebElement logoutButton;
+
+        [FindsBy(How = How.CssSelector, Using = ".list-unstyled")]
+        public IWebElement loginError;
     }
 }

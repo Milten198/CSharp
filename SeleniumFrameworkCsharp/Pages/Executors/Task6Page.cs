@@ -51,5 +51,14 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             return locators.logoutButton.Displayed;
         }
 
+        public void ClickLogoutButton()
+        {
+            locators.logoutButton.Click();
+        }
+
+        public string GetLoginErrorMessage()
+        {
+            return locators.loginError.Text;
+        }
     }
 }

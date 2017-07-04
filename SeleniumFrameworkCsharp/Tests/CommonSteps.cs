@@ -5,6 +5,7 @@ using SeleniumFrameworkCsharp.Utilities.Helpers;
 using System;
 using SeleniumFrameworkCsharp.Pages.Executors;
 using SeleniumFrameworkCsharp.Utilities.Objects;
+using NUnit.Framework;
 
 namespace SeleniumFrameworkCsharp.Tests
 {
@@ -13,16 +14,13 @@ namespace SeleniumFrameworkCsharp.Tests
     {
         static SeleniumExecutor executor;
 
-        [BeforeFeature]
-        public static void BeforeTestRunCommon()
+        [BeforeScenario]
+        public static void BeforeEachScenario()
         {
             SeleniumExecutor.BaseSetUp();
             executor = SeleniumExecutor.GetExecutor();
             executor.OpenPage(SeleniumExecutor.pageDefaultUrl);
-
-        
         }
-
 
         [AfterScenario]
         public static void TakeScreenshot()
@@ -31,6 +29,7 @@ namespace SeleniumFrameworkCsharp.Tests
             {
                 executor.ScreenshotReport();
             }
+            executor.BaseTearDown();
         }
 
         [AfterFeature]
@@ -45,6 +44,5 @@ namespace SeleniumFrameworkCsharp.Tests
             DashboardPage dashboard = new DashboardPage(executor);
             dashboard.GoToTask(taskNumber);
         }
-
     }
 }
