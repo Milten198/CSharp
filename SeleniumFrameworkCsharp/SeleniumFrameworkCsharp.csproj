@@ -82,10 +82,12 @@
     <Compile Include="Pages\Executors\Task6Page.cs" />
     <Compile Include="Pages\Executors\DashboardPage.cs" />
     <Compile Include="Pages\Executors\Task1Page.cs" />
+    <Compile Include="Pages\Executors\Task7Page.cs" />
     <Compile Include="Pages\Executors\Task8Page.cs" />
     <Compile Include="Pages\Locators\DashboardPageLocators.cs" />
     <Compile Include="Pages\Locators\Task1PageLocators.cs" />
     <Compile Include="Pages\Locators\Task6PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task7Locators.cs" />
     <Compile Include="Pages\Locators\Task8PageLocators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\CommonSteps.cs" />
@@ -99,9 +101,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Task6.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Features\Task7.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task7.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\NunitTestExample.cs" />
     <Compile Include="Tests\Steps\Task1Steps.cs" />
     <Compile Include="Tests\Steps\Task6Steps.cs" />
+    <Compile Include="Tests\Steps\Task7Steps.cs" />
     <Compile Include="Utilities\Configurations\TestConfiguration.cs" />
     <Compile Include="Utilities\Enums\AttributeType.cs" />
     <Compile Include="Utilities\Enums\BrowserType.cs" />
@@ -124,6 +132,10 @@
     <None Include="Tests\Features\Task6.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task7.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
