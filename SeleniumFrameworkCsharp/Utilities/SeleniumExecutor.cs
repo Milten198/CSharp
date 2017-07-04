@@ -18,7 +18,7 @@ namespace SeleniumFrameworkCsharp.Utilities
 {
     public class SeleniumExecutor
     {
-        private static readonly int Timeout = 10; //seconds
+        private static readonly int Timeout = 4; //seconds
 
         public static SeleniumExecutor executor;
         private static RemoteWebDriver driver;
@@ -58,8 +58,11 @@ namespace SeleniumFrameworkCsharp.Utilities
 
         public void BaseTearDown()
         {
-            driver.Close();
-            driver.Quit();
+            if (driver != null)
+            {
+                driver.Close();
+                driver.Quit();
+            }
         }
 
         private static void Init()
@@ -153,6 +156,6 @@ namespace SeleniumFrameworkCsharp.Utilities
             driver.Navigate().GoToUrl(url);
             driver.WaitForNoAjaxRequestsPending();
         }
-     
+
     }
 }

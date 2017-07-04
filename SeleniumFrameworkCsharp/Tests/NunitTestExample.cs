@@ -17,26 +17,44 @@ namespace SeleniumFrameworkCsharp.Tests
         public DashboardPage dashboard;
         public SeleniumExecutor executor;
         public Task1Page task1Page;
+        public Task6Page task6Page;
+
+        public NunitTestExample()
+        {
+
+        }
+
 
         [TestFixtureSetUp]
         public void SetUp()
         {
-            SeleniumExecutor.BaseSetUp();
-            executor = SeleniumExecutor.GetExecutor();
-            executor.OpenPage(SeleniumExecutor.pageDefaultUrl);
+            //Before first test
+;
         }
 
         [TearDown]
         public void TestTearDown()
         {
+            // After each test
+            executor.BaseTearDown();
             executor.ScreenshotReport();
         }
 
         [TestFixtureTearDown]
         public void TearDown()
         {
-            executor.BaseTearDown();
+            // Once after all tests
         }
+
+        [SetUp]
+        public void FirstSetUp()
+        {
+            // Before each test
+            SeleniumExecutor.BaseSetUp();
+            executor = SeleniumExecutor.GetExecutor();
+            executor.OpenPage(SeleniumExecutor.pageDefaultUrl);
+        }
+
 
         [Test]
         public void AddProductToBasketTest()
@@ -54,6 +72,20 @@ namespace SeleniumFrameworkCsharp.Tests
         }
 
         [Test]
+        public void LoginToDownloadPage()
+        {
+            DashboardPage dashboard = new DashboardPage(executor);
+            dashboard.GoToTask("6/logged");
+
+            task6Page = new Task6Page(executor);
+            task6Page.TypeLogin("tester");
+            task6Page.TypePassword("123-xyz");
+            task6Page.ClickLoginButton();
+
+            Assert.True(task6Page.IsLoggedPageOpen(), "Logged page is not opened");
+        }
+
+        [Test]
         public void Test8()
         {
             DashboardPage dashboard = new DashboardPage(executor);
@@ -61,7 +93,7 @@ namespace SeleniumFrameworkCsharp.Tests
 
             Task8Page task8 = new Task8Page(executor);
 
-            task8.SelectCardType("aec"); 
+            task8.SelectCardType("aec");
             RandomStringGenerator generator = new RandomStringGenerator();
             task8.EnterName(generator.GetRandomString(8));
             task8.EnterCardNumber("378734493671000");
