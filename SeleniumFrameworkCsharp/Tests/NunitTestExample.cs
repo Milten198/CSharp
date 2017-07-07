@@ -85,23 +85,6 @@ namespace SeleniumFrameworkCsharp.Tests
             Assert.True(task6Page.IsLoggedPageOpen(), "Logged page is not opened");
         }
 
-        [Test]
-        public void Test8()
-        {
-            DashboardPage dashboard = new DashboardPage(executor);
-            dashboard.GoToTask("8");
-
-            Task8Page task8 = new Task8Page(executor);
-
-            task8.SelectCardType("aec");
-            RandomStringGenerator generator = new RandomStringGenerator();
-            task8.EnterName(generator.GetRandomString(8));
-            task8.EnterCardNumber("378734493671000");
-            task8.EnterCVV("257");
-            task8.SelectMonth(Month.February);
-            task8.SelectYear("2017");
-            task8.Pay();
-        }
 
     }
 }

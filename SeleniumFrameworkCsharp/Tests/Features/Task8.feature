@@ -1,7 +1,8 @@
 ﻿@task8
 Feature: Payment with different credit cards
 
-
+Background: 
+Given I open task 8 page
 
 @positive
 Scenario Outline: User pays with different credit cards: 
@@ -11,7 +12,7 @@ And I type credit card number "<cardNumber>"
 And I type CVV code "123"
 And I select expiration date "July", "2020"
 And I click pay button
-Then Payment confirmation is displayed
+Then Payment message "Zamówienie opłacone" is displayed
 
 Examples:
       | cardType                   | cardNumber       |
@@ -25,7 +26,7 @@ And I type credit card number "<cardNumber>"
 And I type CVV code "123"
 And I select expiration date "February", "2017"
 And I click pay button
-Then Payment expiration date message "Upłynął termin ważności karty" is displayed
+Then Payment message "Upłynął termin ważności karty" is displayed
 
 Examples:
       | cardType         | cardNumber      |

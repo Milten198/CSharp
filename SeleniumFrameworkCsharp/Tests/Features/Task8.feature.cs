@@ -104,7 +104,7 @@ testRunner.And("I select expiration date \"July\", \"2020\"", ((string)(null)), 
 #line 14
 testRunner.And("I click pay button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.Then("Payment confirmation is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Payment message \"Zamówienie opłacone\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -132,7 +132,7 @@ testRunner.And("I select expiration date \"February\", \"2017\"", ((string)(null
 #line 28
 testRunner.And("I click pay button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
-testRunner.Then("Payment expiration date message \"Upłynął termin ważności karty\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Payment message \"Upłynął termin ważności karty\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

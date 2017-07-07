@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using SeleniumFrameworkCsharp.Pages.Executors;
 using SeleniumFrameworkCsharp.Utilities;
+using SeleniumFrameworkCsharp.Utilities.Enums;
 using System;
 using TechTalk.SpecFlow;
 
@@ -10,18 +11,18 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
     public class Task8Steps
     {
         private Task8Page task8Page;
-        //private SeleniumExecutor executor;
+        private SeleniumExecutor executor;
 
         public Task8Steps()
         {
-            //executor = SeleniumExecutor.GetExecutor();
-            task8Page = new Task8Page();
+            executor = SeleniumExecutor.GetExecutor();
+            task8Page = new Task8Page(executor);
         }
 
         [When(@"I select credit card type ""(.*)""")]
         public void WhenISelectCreditCardType(string cardName)
         {
-            task8Page.SelectCardName(cardName);
+            task8Page.SelectCardType(cardName);
         }
 
         [When(@"I type name ""(.*)""")]
@@ -54,18 +55,10 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
         {
             task8Page.Pay();
         }
-
-        [Then(@"Payment confirmation is displayed")]
-        public void ThenPaymentConfirmationIsDisplayed()
+        [Then(@"Payment message ""(.*)"" is displayed")]
+        public void ThenPaymentMessageIsDisplayed(string message)
         {
-            Assert.True(task8Page.IsConfirmationMessage(), "Confirmation message is not displayed");
+            Assert.AreEqual(message, task8Page.GetPaymentMessage(), "Incorrect error message");
         }
-
-        [Then(@"Payment expiration date message ""(.*)"" is displayed")]
-        public void ThenPaymentExpirationDateMessageIsDisplayed(string message)
-        {
-            Assert.AreEqual(message, task8Page.GetPaymentErrorMessage(), "Incorrect error message");
-        }
-
     }
 }

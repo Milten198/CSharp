@@ -29,7 +29,7 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
 
         public void SelectCardType(string type)
         {
-            locators.GetCardTypeSelect().SelectByValue(type);
+            locators.GetCardTypeSelect().SelectByText(type);
         }
 
         public void EnterName(string name)
@@ -47,7 +47,7 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             locators.cardCVVInput.SendKeysWithWait(cvv);
         }
 
-        public void SelectMonth(Month month)
+        public void SelectMonth(string month)
         {
             locators.GetCardInfoMonthSelect().SelectByText(month.ToString());
         }
@@ -60,6 +60,11 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
         public void Pay()
         {
             locators.payButton.ClickWithWait();
+        }
+
+        public string GetPaymentMessage()
+        {
+            return locators.paymentMessage.Text;
         }
     }
 }

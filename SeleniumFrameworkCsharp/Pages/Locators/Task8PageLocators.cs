@@ -38,5 +38,8 @@ namespace SeleniumFrameworkCsharp.Pages.Locators
 
         [FindsBy(How = How.Name, Using = "task8_form[save]")]
         public IWebElement payButton;
+
+        [FindsBy(How = How.CssSelector, Using = ".list-unstyled>li")]
+        public IWebElement paymentMessage;
     }
 }

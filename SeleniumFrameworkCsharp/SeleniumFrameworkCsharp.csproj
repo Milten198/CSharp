@@ -106,10 +106,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Task7.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Features\Task8.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task8.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\NunitTestExample.cs" />
     <Compile Include="Tests\Steps\Task1Steps.cs" />
     <Compile Include="Tests\Steps\Task6Steps.cs" />
     <Compile Include="Tests\Steps\Task7Steps.cs" />
+    <Compile Include="Tests\Steps\Task8Steps.cs" />
     <Compile Include="Utilities\Configurations\TestConfiguration.cs" />
     <Compile Include="Utilities\Enums\AttributeType.cs" />
     <Compile Include="Utilities\Enums\BrowserType.cs" />
@@ -136,6 +142,10 @@
     <None Include="Tests\Features\Task7.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task8.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
