@@ -31,7 +31,7 @@ namespace SeleniumFrameworkCsharp.Utilities
 
         public SeleniumExecutor()
         {
-
+           
         }
 
         public static void BaseSetUp()
