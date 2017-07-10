@@ -4,7 +4,6 @@ Feature: Login and download file
 Background: 
 Given I open task 6/logged page
 
-
 Scenario: 01 User login to file page
 When I am on login page
 And I type user name "tester"

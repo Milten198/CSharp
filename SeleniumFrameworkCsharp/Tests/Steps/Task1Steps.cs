@@ -46,8 +46,6 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
             Assert.False(task1Page.IsProductDisplayedInBasket(productName), "Product was displayed in basket summary");
         }
 
-
-
         /*Example how to compare two objects*/
         [Then(@"objects are equal")]
         public void ObjectAreEqual()
