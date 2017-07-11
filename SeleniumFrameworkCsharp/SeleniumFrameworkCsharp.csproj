@@ -80,6 +80,7 @@
     <Compile Include="Modules\Locators\PageHeaderLocators.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
     <Compile Include="Pages\Executors\Task2Page.cs" />
+    <Compile Include="Pages\Executors\Task3Page.cs" />
     <Compile Include="Pages\Executors\Task6Page.cs" />
     <Compile Include="Pages\Executors\DashboardPage.cs" />
     <Compile Include="Pages\Executors\Task1Page.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Pages\Executors\Task8Page.cs" />
     <Compile Include="Pages\Locators\DashboardPageLocators.cs" />
     <Compile Include="Pages\Locators\Task1PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task3PageLocators.cs" />
     <Compile Include="Pages\Locators\Task6PageLocators.cs" />
     <Compile Include="Pages\Locators\Task7Locators.cs" />
     <Compile Include="Pages\Locators\Task8PageLocators.cs" />
@@ -102,6 +104,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Task2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task3.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Features\Task6.feature.cs">
       <AutoGen>True</AutoGen>
@@ -121,6 +128,7 @@
     <Compile Include="Tests\NunitTestExample.cs" />
     <Compile Include="Tests\Steps\Task1Steps.cs" />
     <Compile Include="Tests\Steps\Task2Steps.cs" />
+    <Compile Include="Tests\Steps\Task3Steps.cs" />
     <Compile Include="Tests\Steps\Task6Steps.cs" />
     <Compile Include="Tests\Steps\Task7Steps.cs" />
     <Compile Include="Tests\Steps\Task8Steps.cs" />
@@ -147,6 +155,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\Features\Task3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task3.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\Features\Task6.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task6.feature.cs</LastGenOutput>
@@ -168,6 +180,7 @@
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Utilities\Files\bob.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
