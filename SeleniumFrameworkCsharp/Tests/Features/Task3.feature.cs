@@ -99,6 +99,23 @@ testRunner.And("All fields have correct data", ((string)(null)), ((TechTalk.Spec
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User is not able to fill form before unlock")]
+        public virtual void UserIsNotAbleToFillFormBeforeUnlock()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is not able to fill form before unlock", ((string[])(null)));
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 17
+testRunner.When("I try to modify form in locked mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+testRunner.Then("I am not able to modify data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

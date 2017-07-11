@@ -62,5 +62,18 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
             Assert.AreEqual(task3page.Phone, task3page.VerifyPhone());
             Assert.True(task3page.VerifyPhotoSrc().Contains("data:image/jpeg;base64"));
         }
+
+        [When(@"I try to modify form in locked mode")]
+        public void WhenITryToModifyFormInLockedMode()
+        {
+            Assert.True(task3page.IsFormEditable());
+        }
+
+        [Then(@"I am not able to modify data")]
+        public void ThenIAmNotAbleToModifyData()
+        {
+            Assert.AreEqual("Salma", task3page.VerifyName());
+        }
+
     }
 }

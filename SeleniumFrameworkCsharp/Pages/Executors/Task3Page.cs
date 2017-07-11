@@ -91,6 +91,22 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             return locators.image.GetAttribute("src");
         }
 
+        public bool IsFormEditable()
+        {
+            bool canNotEdit = false;
+            try
+            {
+                locators.nameInput.SendKeysWithWait(Name);
+            } catch (System.Exception ex)
+            {
+                if (ex.Message.Contains("Exception has been thrown by the target of an invocation."))
+                {
+                    canNotEdit = true;
+                }
+            }
+            return canNotEdit;
+        }
+
         public string Name { get; set; } = name;
         public string Surname { get; set; } = surname;
         public string Notes { get; set; } = notes;

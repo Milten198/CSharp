@@ -12,3 +12,7 @@ And I upload photo
 And I click save button
 Then Message "Twoje dane zostały poprawnie zapisane" should appears
 And All fields have correct data
+
+Scenario: User is not able to fill form before unlock
+When I try to modify form in locked mode
+Then I am not able to modify data
