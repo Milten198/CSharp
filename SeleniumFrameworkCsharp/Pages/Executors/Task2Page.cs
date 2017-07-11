@@ -27,6 +27,19 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             locators.dropDownArrow.Click();
         }
 
+        public void SelectCategory(string category)
+        {
+            var list = locators.listOfCategories;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Text.Equals(category))
+                {
+                    list[i].Click();
+                    break;
+                }
+            }
+        }
+
         public void TypeTextInSearchBox(string text)
         {
             locators.searchBox.SendKeysWithWait(text);
@@ -36,11 +49,12 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
         public bool VerifyCategoriesOfSelectedProducts(string category)
         {
             bool areProperCategories = true;
-            var lista = locators.categoriesOfProducts;
-            for (int i = 0; i < lista.Count; i++)
+            var list = locators.categoriesOfProducts;
+            for (int i = 0; i < list.Count; i++)
             {
-                if (!lista[i].Text.Equals(category)) {
+                if (!list[i].Text.Equals(category)) {
                     areProperCategories = false;
+                    break;
                 }
             }
             return areProperCategories;

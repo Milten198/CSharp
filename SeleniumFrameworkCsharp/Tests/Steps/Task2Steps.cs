@@ -39,5 +39,11 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
         {
             Assert.True(task2Page.VerifyCategoriesOfSelectedProducts(category));
         }
+
+        [When(@"I select category ""(.*)""")]
+        public void WhenISelectCategory(string category)
+        {
+            task2Page.SelectCategory(category);
+        }
     }
 }

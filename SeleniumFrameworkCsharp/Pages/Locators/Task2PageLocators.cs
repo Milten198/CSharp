@@ -14,5 +14,8 @@ namespace SeleniumFrameworkCsharp.Pages.Locators
 
         [FindsBy(How = How.CssSelector, Using = ".caption>p>strong")]
         public IList<IWebElement> categoriesOfProducts;
+
+        [FindsBy(How = How.XPath, Using = "//span/ul/li")]
+        public IList<IWebElement> listOfCategories;
     }
 }

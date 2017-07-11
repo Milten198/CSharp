@@ -32,7 +32,7 @@ namespace SeleniumFrameworkCsharp.Tests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Task2", null, ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Task2", " As a user\r\n I want to be able to sort products by category", ProgrammingLanguage.CSharp, new string[] {
                         "Sorting"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -67,29 +67,51 @@ namespace SeleniumFrameworkCsharp.Tests.Features
         
         public virtual void FeatureBackground()
         {
-#line 4
-#line 5
+#line 7
+#line 8
 testRunner.Given("I open task 2 page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("02 User is able to sort products by category")]
+        [NUnit.Framework.TestCaseAttribute("Sport", null)]
+        [NUnit.Framework.TestCaseAttribute("Elektronika", null)]
+        [NUnit.Framework.TestCaseAttribute("Firma i usługi", null)]
+        public virtual void _02UserIsAbleToSortProductsByCategory(string category, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 User is able to sort products by category", exampleTags);
+#line 10
+this.ScenarioSetup(scenarioInfo);
+#line 7
+this.FeatureBackground();
+#line 11
+testRunner.When("I expand dropdown list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+testRunner.And(string.Format("I select category \"{0}\"", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+testRunner.Then(string.Format("I can see products only for this category \"{0}\"", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01 User is able to search for category")]
-        [NUnit.Framework.TestCaseAttribute("el", "Elektronika", null)]
         [NUnit.Framework.TestCaseAttribute("ort", "Sport", null)]
+        [NUnit.Framework.TestCaseAttribute("el", "Elektronika", null)]
         [NUnit.Framework.TestCaseAttribute("a i usł", "Firma i usługi", null)]
         public virtual void _01UserIsAbleToSearchForCategory(string fragment, string category, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 User is able to search for category", exampleTags);
-#line 8
+#line 22
 this.ScenarioSetup(scenarioInfo);
-#line 4
+#line 7
 this.FeatureBackground();
-#line 9
+#line 23
 testRunner.When("I expand dropdown list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
+#line 24
 testRunner.And(string.Format("I type fragment \"{0}\" of category name", fragment), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+#line 25
 testRunner.Then(string.Format("I can see products only for this category \"{0}\"", category), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
