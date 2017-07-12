@@ -83,6 +83,7 @@
     <Compile Include="Pages\Executors\Task3Page.cs" />
     <Compile Include="Pages\Executors\Task4Page.cs" />
     <Compile Include="Pages\Executors\Task4Window.cs" />
+    <Compile Include="Pages\Executors\Task5Page.cs" />
     <Compile Include="Pages\Executors\Task6Page.cs" />
     <Compile Include="Pages\Executors\DashboardPage.cs" />
     <Compile Include="Pages\Executors\Task1Page.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Pages\Locators\Task3PageLocators.cs" />
     <Compile Include="Pages\Locators\Task4PageLocators.cs" />
     <Compile Include="Pages\Locators\Task4WindowLocators.cs" />
+    <Compile Include="Pages\Locators\Task5PageLocators.cs" />
     <Compile Include="Pages\Locators\Task6PageLocators.cs" />
     <Compile Include="Pages\Locators\Task7Locators.cs" />
     <Compile Include="Pages\Locators\Task8PageLocators.cs" />
@@ -154,6 +156,7 @@
     <Compile Include="Utilities\Enums\Month.cs" />
     <Compile Include="Utilities\Helpers\RandomStringGenerator.cs" />
     <Compile Include="Utilities\Helpers\SerializeObjectToJson.cs" />
+    <Compile Include="Utilities\Objects\Person.cs" />
     <Compile Include="Utilities\Objects\Users.cs" />
     <Compile Include="Utilities\SeleniumExecutor.cs" />
     <Compile Include="Utilities\Helpers\SeleniumExtender.cs" />

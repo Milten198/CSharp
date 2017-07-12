@@ -51,8 +51,8 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
 
         public void UploadFile()
         {
-            string uuserPath = AppDomain.CurrentDomain.BaseDirectory + @"Files/bob.jpg";
-            locators.fileInput.SendKeys(uuserPath);
+            string userPath = AppDomain.CurrentDomain.BaseDirectory + @"Files/bob.jpg";
+            locators.fileInput.SendKeys(userPath);
         }
 
         public void SaveForm()

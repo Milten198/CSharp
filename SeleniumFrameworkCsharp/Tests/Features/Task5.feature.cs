@@ -85,9 +85,95 @@ this.ScenarioSetup(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line 9
- testRunner.When("I upload file \"correct.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("I upload file \"correct.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.Then("Data from file are shown in table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Data from file are shown in table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User see alert when uploading file with to many rows")]
+        public virtual void UserSeeAlertWhenUploadingFileWithToManyRows()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User see alert when uploading file with to many rows", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 13
+testRunner.When("I upload file \"toManyRows.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+testRunner.Then("I can see alert with message \"Maksymalnie wprowadzić można 20 wierszy.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User is able to see alert message when uploading file with wrong phone number")]
+        public virtual void UserIsAbleToSeeAlertMessageWhenUploadingFileWithWrongPhoneNumber()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to see alert message when uploading file with wrong phone number", ((string[])(null)));
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 17
+testRunner.When("I upload file \"wrongPhoneNumber.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+testRunner.Then("I can see alert with message \"Numer telefonu może zawierać tylko znaki numeryczne" +
+                    ", musi mieć 9 znaków.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User is able to see alert message when file is incorrectly formatted")]
+        public virtual void UserIsAbleToSeeAlertMessageWhenFileIsIncorrectlyFormatted()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to see alert message when file is incorrectly formatted", ((string[])(null)));
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 21
+testRunner.When("I upload file \"wrongDataFormat.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+testRunner.Then("I can see alert with message \"Źle sformatowany plik.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User is able to see alert message when file has wrong format")]
+        public virtual void UserIsAbleToSeeAlertMessageWhenFileHasWrongFormat()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to see alert message when file has wrong format", ((string[])(null)));
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 25
+testRunner.When("I upload file \"wrongFileFormat.png\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+testRunner.Then("I can see alert with message \"Zły format pliku\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User is able to see alert message when file is empty")]
+        public virtual void UserIsAbleToSeeAlertMessageWhenFileIsEmpty()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to see alert message when file is empty", ((string[])(null)));
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 29
+testRunner.When("I upload file \"empty.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+testRunner.Then("I can see alert with message \"Plik jest pusty, lub źle sformatowany\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
