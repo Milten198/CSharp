@@ -66,5 +66,18 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
         {
             Assert.AreEqual(message, task4window.GetConfirmationMessage());
         }
+
+        [Then(@"I can see error message ""(.*)"" for email")]
+        public void ThenICanSeeErrorMessageForEmail(string message)
+        {
+            Assert.AreEqual(message, task4window.GetErrorMessage("1"));
+        }
+
+        [Then(@"I can see error message ""(.*)"" for phone number")]
+        public void ThenICanSeeErrorMessageForPhoneNumber(string message)
+        {
+            Assert.AreEqual(message, task4window.GetErrorMessage("2"));
+        }
+
     }
 }

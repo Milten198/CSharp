@@ -34,17 +34,17 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
 
         public void EnterName(string name)
         {
-            locators.nameInput.SendKeysWithWait(name);
+            locators.nameInput.SendKeys(name);
         }
 
         public void EnterCardNumber(string number)
         {
-            locators.cardNumberInput.SendKeysWithWait(number);
+            locators.cardNumberInput.SendKeys(number);
         }
 
         public void EnterCVV(string cvv)
         {
-            locators.cardCVVInput.SendKeysWithWait(cvv);
+            locators.cardCVVInput.SendKeys(cvv);
         }
 
         public void SelectMonth(string month)
@@ -59,7 +59,7 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
 
         public void Pay()
         {
-            locators.payButton.ClickWithWait();
+            locators.payButton.Click();
         }
 
         public string GetPaymentMessage()

@@ -119,6 +119,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Task4.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Features\Task5.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task5.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Features\Task6.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +144,7 @@
     <Compile Include="Tests\Steps\Task2Steps.cs" />
     <Compile Include="Tests\Steps\Task3Steps.cs" />
     <Compile Include="Tests\Steps\Task4Steps.cs" />
+    <Compile Include="Tests\Steps\Task5Steps.cs" />
     <Compile Include="Tests\Steps\Task6Steps.cs" />
     <Compile Include="Tests\Steps\Task7Steps.cs" />
     <Compile Include="Tests\Steps\Task8Steps.cs" />
@@ -172,6 +178,10 @@
     <None Include="Tests\Features\Task4.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task5.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Features\Task6.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

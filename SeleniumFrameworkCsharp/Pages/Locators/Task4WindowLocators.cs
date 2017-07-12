@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using SeleniumFrameworkCsharp.Utilities;
+using SeleniumFrameworkCsharp.Utilities.Enums;
 
 namespace SeleniumFrameworkCsharp.Pages.Locators
 {
@@ -22,5 +24,10 @@ namespace SeleniumFrameworkCsharp.Pages.Locators
 
         [FindsBy(How = How.CssSelector, Using = ".container>h1")]
         public IWebElement confirmationMessage;
+
+        public IWebElement errorFields(string error)
+        {
+            return SeleniumExecutor.GetDriver().FindElement(By.XPath($"(//span[@class='error'])[{error}]"));
+        }
     }
 }

@@ -2,6 +2,8 @@
 using SeleniumFrameworkCsharp.Utilities;
 using SeleniumFrameworkCsharp.Pages.Locators;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium;
+using SeleniumFrameworkCsharp.Utilities.Enums;
 
 namespace SeleniumFrameworkCsharp.Pages.Executors
 {
@@ -51,6 +53,11 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
         public string GetConfirmationMessage()
         {
             return locators.confirmationMessage.Text;
+        }
+
+        public string GetErrorMessage(string error)
+        {
+            return locators.errorFields(error).Text;
         }
 
         private void SwitchToFrame()

@@ -78,11 +78,11 @@ testRunner.And("Form in new window opens", ((string)(null)), ((TechTalk.SpecFlow
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User fill form with correct data")]
+        [NUnit.Framework.DescriptionAttribute("01 User fill form with correct data")]
         [NUnit.Framework.CategoryAttribute("positive")]
-        public virtual void UserFillFormWithCorrectData()
+        public virtual void _01UserFillFormWithCorrectData()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User fill form with correct data", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 User fill form with correct data", new string[] {
                         "positive"});
 #line 10
 this.ScenarioSetup(scenarioInfo);
@@ -98,6 +98,32 @@ testRunner.And("I fill phone field with \"600-100-200\"", ((string)(null)), ((Te
 testRunner.And("I save this form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
 testRunner.Then("I can see message \"Wiadomość została wysłana\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("02 User tries to save form with wrong email and phone")]
+        public virtual void _02UserTriesToSaveFormWithWrongEmailAndPhone()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 User tries to save form with wrong email and phone", ((string[])(null)));
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 18
+testRunner.When("I fill name field with \"Jan Kowalski\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+testRunner.And("I fill email field with \"wrong email\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+testRunner.And("I fill phone field with \"600100200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+testRunner.And("I save this form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+testRunner.Then("I can see error message \"Nieprawidłowy email\" for email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+testRunner.And("I can see error message \"Zły format telefonu - prawidłowy: 600-100-200\" for phone" +
+                    " number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
