@@ -29,7 +29,6 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
 
         public void AddProductToBasket(string productName, string quantity)
         {
-            InitTask1PageElements();
             IWebElement product = GetProductByName(productName);
             locators.GetQuantityInputForProduct(product).ClearWithWait();
             locators.GetQuantityInputForProduct(product).SendKeysWithWait(quantity);
