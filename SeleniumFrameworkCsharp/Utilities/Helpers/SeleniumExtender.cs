@@ -18,10 +18,16 @@ namespace SeleniumFrameworkCsharp.Utilities.Helpers
         {
             IWebDriver driver = SeleniumExecutor.GetDriver();
             String position = element.Location.Y.ToString();
-            String script = String.Format("$('#main-container').scrollTop({0})", position);
+            String script = String.Format($"('#main-container').scrollTop({position})");
             ((IJavaScriptExecutor)driver).ExecuteScript(script);
 
             return element;
+        }
+
+        public static void ScrollPageDown()
+        {
+            IWebDriver driver = SeleniumExecutor.GetDriver();
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0,50)");
         }
 
         // onther working method

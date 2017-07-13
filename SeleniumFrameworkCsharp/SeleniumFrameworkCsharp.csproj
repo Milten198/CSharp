@@ -79,6 +79,7 @@
     <Compile Include="Modules\Locators\NavigationBarLocators.cs" />
     <Compile Include="Modules\Locators\PageHeaderLocators.cs" />
     <Compile Include="Pages\AbstractPage.cs" />
+    <Compile Include="Pages\Executors\Task10Page.cs" />
     <Compile Include="Pages\Executors\Task2Page.cs" />
     <Compile Include="Pages\Executors\Task3Page.cs" />
     <Compile Include="Pages\Executors\Task4Page.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Pages\Executors\Task8Page.cs" />
     <Compile Include="Pages\Executors\Task9Page.cs" />
     <Compile Include="Pages\Locators\DashboardPageLocators.cs" />
+    <Compile Include="Pages\Locators\Task10PageLocators.cs" />
     <Compile Include="Pages\Locators\Task1PageLocators.cs" />
     <Compile Include="Pages\Locators\Task3PageLocators.cs" />
     <Compile Include="Pages\Locators\Task4PageLocators.cs" />
@@ -107,6 +109,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Task1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task10.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task10.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\Features\Task2.feature.cs">
       <AutoGen>True</AutoGen>
@@ -150,6 +157,7 @@
     </Compile>
     <Compile Include="Tests\NunitTestExample.cs" />
     <Compile Include="Tests\Steps\SeleniumExtender.cs" />
+    <Compile Include="Tests\Steps\Task10Steps.cs" />
     <Compile Include="Tests\Steps\Task1Steps.cs" />
     <Compile Include="Tests\Steps\Task2Steps.cs" />
     <Compile Include="Tests\Steps\Task3Steps.cs" />
@@ -178,6 +186,10 @@
     <None Include="Tests\Features\Task1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Task1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task10.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Features\Task2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
