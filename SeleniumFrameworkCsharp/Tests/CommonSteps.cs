@@ -44,5 +44,12 @@ namespace SeleniumFrameworkCsharp.Tests
             DashboardPage dashboard = new DashboardPage(executor);
             dashboard.GoToTask(taskNumber);
         }
+
+        [Then(@"I can see alert with message ""(.*)""")]
+        public void ThenICanSeeAlertWithMessage(string message)
+        {
+            DashboardPage dashboard = new DashboardPage(executor);
+            Assert.AreEqual(message, dashboard.GetMessageFromAlert());
+        }
     }
 }

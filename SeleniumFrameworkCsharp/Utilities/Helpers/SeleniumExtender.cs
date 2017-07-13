@@ -75,6 +75,20 @@ namespace SeleniumFrameworkCsharp.Utilities.Helpers
                 webElements.GetElementWithTextFromElementList("any").Click();
             }
         }
+
+        public static void DoubleClick(this IWebElement objectName)
+        {
+            Actions actionProvider = new Actions(SeleniumExecutor.GetDriver());
+            actionProvider.DoubleClick(objectName)
+                .Build().Perform();
+        }
+
+        public static void ContextClick(this IWebElement objectName)
+        {
+            Actions actionProvider = new Actions(SeleniumExecutor.GetDriver());
+            actionProvider.ContextClick(objectName)
+                .Build().Perform();
+        }
     }
 
     public static class SeleniumSendKeys
@@ -204,7 +218,7 @@ namespace SeleniumFrameworkCsharp.Utilities.Helpers
         {
             WebDriverWait waitDriver = SeleniumExecutor.GetWaitDriver();
             waitDriver.Until(d => (bool)e.Displayed == true);
-        
+
         }
 
         public static void WaitForElementToBeEnabled(this IWebDriver driver, IWebElement e)

@@ -49,12 +49,6 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             return areEquals;
         }
 
-        public string GetMessageFromAlert()
-        {
-            SeleniumExecutor.GetDriver().WaitForNoAjaxRequestsPending();
-            return SeleniumExecutor.GetDriver().SwitchTo().Alert().Text;
-        }
-
         private List<Person> CreateListOfDataFromFile()
         {
             string filePath = AppDomain.CurrentDomain.BaseDirectory + @"Files\Task5\correct.txt";

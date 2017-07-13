@@ -1,11 +1,7 @@
 ﻿using OpenQA.Selenium.Support.PageObjects;
 using SeleniumFrameworkCsharp.Pages.Locators;
 using SeleniumFrameworkCsharp.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SeleniumFrameworkCsharp.Utilities.Helpers;
 
 namespace SeleniumFrameworkCsharp.Pages.Executors
 {
@@ -30,5 +26,10 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
             locators.GetTaskButton(taskNumber).Click();
         }
 
+        public string GetMessageFromAlert()
+        {
+            SeleniumExecutor.GetDriver().WaitForNoAjaxRequestsPending();
+            return SeleniumExecutor.GetDriver().SwitchTo().Alert().Text;
+        }
     }
 }

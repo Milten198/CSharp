@@ -32,12 +32,6 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
         public void ThenDataFromFileAreShownInTable()
         {
             Assert.True(task5Page.CompareTwoLists());
-        }
-
-        [Then(@"I can see alert with message ""(.*)""")]
-        public void ThenICanSeeAlertWithMessage(string message)
-        {
-            Assert.AreEqual(message, task5Page.GetMessageFromAlert());
-        }
+        }     
     }
 }
