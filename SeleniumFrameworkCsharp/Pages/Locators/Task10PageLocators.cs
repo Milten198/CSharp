@@ -11,7 +11,7 @@ namespace SeleniumFrameworkCsharp.Pages.Locators
     class Task10PageLocators
     {
         [FindsBy(How = How.XPath, Using = "//div[@class='jscroll-added']")]
-        public List<IWebElement> loadedFragments;
+        public IList<IWebElement> loadedFragments;
 
         [FindsBy(How = How.XPath, Using = "//h3[text() = 'Koniec']")]
         public IWebElement footer;

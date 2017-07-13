@@ -5,6 +5,7 @@ using NUnit.Framework;
 using TechTalk.SpecFlow;
 using SeleniumFrameworkCsharp.Utilities.Objects;
 using SeleniumFrameworkCsharp.Utilities.Helpers;
+using System.Threading;
 
 namespace SeleniumFrameworkCsharp.Tests.Steps
 {
@@ -25,35 +26,34 @@ namespace SeleniumFrameworkCsharp.Tests.Steps
             task1Page = new Task1Page(executor);
         }
 
-        [When(@"I add ""(.*)"" product to basket in quantity ""(.*)""")]
-        public void WhenIAddProductToBasketInQuantity(string productName, int quantity)
+        [When(@"I add product ""(.*)"" with quantity of ""(.*)""")]
+        public void WhenIAddProductWithQuantityOf(string productName, string productQuantity)
         {
-            task1Page.AddProductToBasket(productName, quantity.ToString());
-            ScenarioContext.Current.Add("productName", productName);
+            task1Page.AddProductToBasket(productName, productQuantity);
         }
 
-        [Then(@"this product is shown in basket summary")]
-        public void ThenThisProductIsShownInBasketSummary()
+        [Then(@"I can see total quantity ""(.*)""")]
+        public void ThenICanSeeTotalQuantity(string totalQuantity)
         {
-            string productName = ScenarioContext.Current.Get<string>("productName");
-            Assert.True(task1Page.IsProductDisplayedInBasket(productName), "Product was not displayed in basket summary");
+            Assert.AreEqual(totalQuantity, task1Page.GetTotalQuantity());
         }
 
-        [Then(@"this product is not shown in basket summary")]
-        public void ThenThisProductIsNotShownInBasketSummary()
+        [Then(@"I can see total price to pay ""(.*)""")]
+        public void ThenICanSeeTotalPriceToPay(string totalPrice)
         {
-            string productName = ScenarioContext.Current.Get<string>("productName");
-            Assert.False(task1Page.IsProductDisplayedInBasket(productName), "Product was displayed in basket summary");
+            Assert.AreEqual(totalPrice, task1Page.GetTotalPriceToPay());
         }
 
-        /*Example how to compare two objects*/
-        [Then(@"objects are equal")]
-        public void ObjectAreEqual()
+        [Then(@"I can see ""(.*)"" products in basket")]
+        public void ThenICanSeeProductsInBasket(int productsInBustket)
         {
-            Users user1 = new Users("aaa", "bb");
-            Users user2 = new Users("aaaa", "bb");
+            Assert.AreEqual(productsInBustket, task1Page.GetNumberOfProductsFromBasket());
+        }
 
-            Assert.AreEqual(SerializeObjectToJson.SerializeToJson(user1), SerializeObjectToJson.SerializeToJson(user2), "Objects were not equal");
+        [Then(@"I remove product ""(.*)"" from basket")]
+        public void ThenIRemoveProductFromBasket(string productToRemove)
+        {
+            task1Page.RemoveProductFromBasket(productToRemove);           
         }
     }
 }

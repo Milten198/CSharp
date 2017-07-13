@@ -31,23 +31,52 @@ namespace SeleniumFrameworkCsharp.Pages.Executors
         {
             InitTask1PageElements();
             IWebElement product = GetProductByName(productName);
+            locators.GetQuantityInputForProduct(product).ClearWithWait();
             locators.GetQuantityInputForProduct(product).SendKeysWithWait(quantity);
-            locators.GetAddButtonForProduct(product).ClickWithWait();
+            locators.GetAddButtonForProduct(product).Click();
         }
 
         public bool IsProductDisplayedInBasket(string productName)
         {
-            if(locators.productsInBasket.Count == 0){
+            if (locators.productsInBasket.Count == 0)
+            {
                 return false;
-            }else{
+            }
+            else
+            {
                 return locators.productsInBasket.Where(x => x.Text.Contains(productName)).ToList().Count != 0;
             }
-            
+        }
+
+        public string GetTotalPriceToPay()
+        {
+            return locators.totalPrice.Text;
+        }
+
+        public string GetTotalQuantity()
+        {
+            return locators.totalQuantity.Text;
+        }
+
+        public int GetNumberOfProductsFromBasket()
+        {
+            return locators.productsInBasket.Count;
+        }
+
+        public void RemoveProductFromBasket(string productName)
+        {
+            IWebElement product = GetRemoveButtonByName(productName);
+            locators.GetRemoveButtonForProduct(product).Click();
         }
 
         private IWebElement GetProductByName(string productName)
         {
             return locators.productsThumbnails.First(x => x.Text.Contains(productName));
+        }
+
+        private IWebElement GetRemoveButtonByName(string name)
+        {
+            return locators.removeButtons.First(x => x.Text.Contains(name));
         }
 
     }

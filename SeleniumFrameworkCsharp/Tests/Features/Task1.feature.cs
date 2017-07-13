@@ -19,7 +19,7 @@ namespace SeleniumFrameworkCsharp.Tests.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Add product to basket")]
-    [NUnit.Framework.CategoryAttribute("addToBasket")]
+    [NUnit.Framework.CategoryAttribute("task1")]
     public partial class AddProductToBasketFeature
     {
         
@@ -33,7 +33,7 @@ namespace SeleniumFrameworkCsharp.Tests.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Add product to basket", null, ProgrammingLanguage.CSharp, new string[] {
-                        "addToBasket"});
+                        "task1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,45 +68,71 @@ namespace SeleniumFrameworkCsharp.Tests.Features
         public virtual void FeatureBackground()
         {
 #line 4
- #line 5
-  testRunner.Given("I open task 1 page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+testRunner.Given("I open task 1 page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("01 Add one product to basket")]
-        [NUnit.Framework.CategoryAttribute("positive")]
-        public virtual void _01AddOneProductToBasket()
+        [NUnit.Framework.DescriptionAttribute("User is able to add products to basket")]
+        public virtual void UserIsAbleToAddProductsToBasket()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01 Add one product to basket", new string[] {
-                        "positive"});
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to add products to basket", ((string[])(null)));
+#line 7
 this.ScenarioSetup(scenarioInfo);
 #line 4
- this.FeatureBackground();
+this.FeatureBackground();
+#line 8
+testRunner.When("I add product \"Okulary\" with quantity of \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
-    testRunner.When("I add \"Okulary\" product to basket in quantity \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I add product \"Kamera\" with quantity of \"5\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-    testRunner.Then("this product is shown in basket summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I can see total quantity \"25\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 11
+testRunner.And("I can see total price to pay \"482.10 zł\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("02 Add negative number of product to basket")]
-        [NUnit.Framework.CategoryAttribute("positive")]
-        public virtual void _02AddNegativeNumberOfProductToBasket()
+        [NUnit.Framework.DescriptionAttribute("User is able to remove products from basket")]
+        public virtual void UserIsAbleToRemoveProductsFromBasket()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02 Add negative number of product to basket", new string[] {
-                        "positive"});
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is able to remove products from basket", ((string[])(null)));
+#line 13
 this.ScenarioSetup(scenarioInfo);
 #line 4
- this.FeatureBackground();
+this.FeatureBackground();
+#line 14
+testRunner.When("I add product \"Kubek\" with quantity of \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
-    testRunner.When("I add \"Okulary\" product to basket in quantity \"-10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("I add product \"Aparat\" with quantity of \"11\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-    testRunner.Then("this product is not shown in basket summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("I can see \"2\" products in basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+testRunner.And("I remove product \"Kubek\" from basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+testRunner.And("I can see \"1\" products in basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User tries to add over 100 products to basket")]
+        public virtual void UserTriesToAddOver100ProductsToBasket()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User tries to add over 100 products to basket", ((string[])(null)));
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 4
+this.FeatureBackground();
+#line 21
+testRunner.When("I add product \"Okulary\" with quantity of \"70\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+testRunner.And("I add product \"Kamera\" with quantity of \"31\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+testRunner.Then("I can see alert with message \"Łączna ilość produktów w koszyku nie może przekrocz" +
+                    "yć 100.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

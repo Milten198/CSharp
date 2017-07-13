@@ -29,13 +29,6 @@ namespace SeleniumFrameworkCsharp.Utilities.Helpers
             IWebDriver driver = SeleniumExecutor.GetDriver();
             ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0,50)");
         }
-
-        // onther working method
-        //public static void ScrollToElement(this IWebElement we)
-        //{
-        //    RemoteWebElement element = (RemoteWebElement)we;
-        //    var focusOnElement = element.LocationOnScreenOnceScrolledIntoView;
-        //}
     }
 
     public static class SeleniumClick
