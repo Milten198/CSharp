@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66A4C792-901A-490C-846C-62B6872D5B59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeleniumFrameworkCsharp</RootNamespace>
+    <AssemblyName>SeleniumFrameworkCsharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fastjson, Version=2.1.0.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\fastJSON.2.1.24\lib\net40\fastjson.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLipsum.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=593e1df460e1bda0, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLipsum.1.1.0\lib\net20\NLipsum.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriverBackedSelenium.3.4.0\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.2.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.RC.3.1.0\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modules\Executors\NavigationBar.cs" />
+    <Compile Include="Modules\Executors\PageHeader.cs" />
+    <Compile Include="Modules\Locators\NavigationBarLocators.cs" />
+    <Compile Include="Modules\Locators\PageHeaderLocators.cs" />
+    <Compile Include="Pages\AbstractPage.cs" />
+    <Compile Include="Pages\Executors\Task10Page.cs" />
+    <Compile Include="Pages\Executors\Task2Page.cs" />
+    <Compile Include="Pages\Executors\Task3Page.cs" />
+    <Compile Include="Pages\Executors\Task4Page.cs" />
+    <Compile Include="Pages\Executors\Task4Window.cs" />
+    <Compile Include="Pages\Executors\Task5Page.cs" />
+    <Compile Include="Pages\Executors\Task6Page.cs" />
+    <Compile Include="Pages\Executors\DashboardPage.cs" />
+    <Compile Include="Pages\Executors\Task1Page.cs" />
+    <Compile Include="Pages\Executors\Task7Page.cs" />
+    <Compile Include="Pages\Executors\Task8Page.cs" />
+    <Compile Include="Pages\Executors\Task9Page.cs" />
+    <Compile Include="Pages\Locators\DashboardPageLocators.cs" />
+    <Compile Include="Pages\Locators\Task10PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task1PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task3PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task4PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task4WindowLocators.cs" />
+    <Compile Include="Pages\Locators\Task5PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task6PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task7Locators.cs" />
+    <Compile Include="Pages\Locators\Task8PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task2PageLocators.cs" />
+    <Compile Include="Pages\Locators\Task9PageLocators.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\CommonSteps.cs" />
+    <Compile Include="Tests\Features\Task1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task1.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task10.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task10.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task3.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task4.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task4.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task5.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task5.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task6.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task6.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task7.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task7.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task8.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task8.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Features\Task9.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Task9.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\NunitTestExample.cs" />
+    <Compile Include="Tests\Steps\SeleniumExtender.cs" />
+    <Compile Include="Tests\Steps\Task10Steps.cs" />
+    <Compile Include="Tests\Steps\Task1Steps.cs" />
+    <Compile Include="Tests\Steps\Task2Steps.cs" />
+    <Compile Include="Tests\Steps\Task3Steps.cs" />
+    <Compile Include="Tests\Steps\Task4Steps.cs" />
+    <Compile Include="Tests\Steps\Task5Steps.cs" />
+    <Compile Include="Tests\Steps\Task6Steps.cs" />
+    <Compile Include="Tests\Steps\Task7Steps.cs" />
+    <Compile Include="Tests\Steps\Task8Steps.cs" />
+    <Compile Include="Tests\Steps\Task9Steps.cs" />
+    <Compile Include="Utilities\Configurations\TestConfiguration.cs" />
+    <Compile Include="Utilities\Enums\AttributeType.cs" />
+    <Compile Include="Utilities\Enums\BrowserType.cs" />
+    <Compile Include="Utilities\Enums\Month.cs" />
+    <Compile Include="Utilities\Helpers\RandomStringGenerator.cs" />
+    <Compile Include="Utilities\Helpers\SerializeObjectToJson.cs" />
+    <Compile Include="Utilities\Objects\Person.cs" />
+    <Compile Include="Utilities\Objects\Users.cs" />
+    <Compile Include="Utilities\SeleniumExecutor.cs" />
+    <Compile Include="Utilities\Helpers\SeleniumExtender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Tests\Features\Task1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task10.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task8.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Features\Task9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Task9.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.30.0.1\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
